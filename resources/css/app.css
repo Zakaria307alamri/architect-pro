@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+    --bg: #f3f3f1;
+    --surface: #ffffff;
+    --surface-soft: #efefeb;
+    --text: #121212;
+    --muted: #656565;
+    --border: #d7d7d2;
+    --brand: #c56b2f;
+    --brand-soft: #ece0d6;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.arch-headline {
+    font-family: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.arch-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.arch-card:hover {
+    transform: translateY(-4px);
+    border-color: #b8b8b2;
+    box-shadow: 0 14px 30px rgba(18, 18, 18, 0.08);
+}
+
+.arch-container {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+    .arch-container {
+        padding-inline: 1.5rem;
+    }
+}
+
+.arch-kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.arch-divider {
+    height: 1px;
+    background: var(--border);
+}
+
+.arch-link {
+    color: var(--text);
+    transition: color 0.2s ease;
+}
+
+.arch-link:hover {
+    color: var(--brand);
+}
+
+.arch-shell {
+    background:
+        linear-gradient(to bottom, #f8f8f6 0%, #f3f3f1 140px, var(--bg) 100%);
+}
+
+.arch-topline {
+    border-bottom: 1px solid var(--border);
+    background: #fbfbf9;
+}
+
+.arch-logo {
+    font-family: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.arch-nav a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.arch-feature-media {
+    position: relative;
+    overflow: hidden;
+}
+
+.arch-feature-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0));
+    pointer-events: none;
+}
+
+.arch-thumb {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    width: 100%;
+}
+
+.arch-card-title {
+    font-family: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    line-height: 1.05;
+}
+
+.arch-mobile-swipe {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.arch-mobile-swipe::-webkit-scrollbar {
+    display: none;
+}
