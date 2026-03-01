@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: architect-pro
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_URL
+        fromService:
+          type: web
+          name: architect-pro
+          property: url
+      - key: APP_KEY
+        sync: false
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: architect-pro-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: architect-pro-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: architect-pro-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: architect-pro-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: architect-pro-db
+          property: password
+
+databases:
+  - name: architect-pro-db
+    plan: free

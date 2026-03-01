@@ -1,0 +1,16 @@
+/.git
+/.vscode
+/node_modules
+/vendor
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+/.env
+/.env.*
+/bootstrap/cache/*.php
+/public/hot
+/*.log
+/.idea
+/.DS_Store
