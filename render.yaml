@@ -17,6 +17,12 @@ services:
           property: url
       - key: APP_KEY
         sync: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: error
+      - key: RUN_MIGRATIONS
+        value: "true"
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
